@@ -1,0 +1,37 @@
+  <view class="top_lis">
+  *本展馆支持开具电子发票，请您在订单页填写开票信息，发票将在展览结束后1个月左右统一提供。
+</view>
+<view class="list" wx:for="{{goshop_index}}" >
+  <view class="deilt">
+    <view class="name">公司名称:{{item.name}}</view>
+    <view class="num">公司税号:{{item.id_num}}</view>
+  </view>
+  <view class="btn_two">
+    <view bindtap="bianjiFn" data-id="{{item.id}}" data-mobile="{{item.mobile}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}">编辑</view>
+    <view class="binji" bindtap="deleFn" data-id="{{item.id}}">删除</view>
+  </view>
+</view>
+<!-- <view class="list">
+  <view class="deilt">
+    <view class="name">王优秀</view>
+    <view class="num">140522200502120569</view>
+  </view>
+  <view class="btn_two">
+    <view >编辑</view>
+    <view class="binji">删除</view>
+  </view>
+</view>
+<view class="list">
+  <view class="deilt">
+    <view class="name">王优秀</view>
+    <view class="num">140522200502120569</view>
+  </view>
+  <view class="btn_two">
+    <view >编辑</view>
+    <view class="binji">删除</view>
+  </view>
+</view> -->
+<view style="width:100%;height:100rpx;"></view>
+<view class="posdeid" bindtap="addmanFn">
+  添加新单位
+</view>

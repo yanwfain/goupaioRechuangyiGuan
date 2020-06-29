@@ -1,0 +1,97 @@
+<!--index.wxml-->
+<view class="Shouquan {{!hasUserInfo?'showavtibe':'showavtibes'}}">
+	<view class="top_show">
+		<image src="../../image/logo.png"></image>
+		<view class="tit_show">Re睿·国际创忆馆</view>
+	</view>
+	<view class="title_showdelit">
+		获取你的昵称、头像、及性别
+	</view>
+	<view class="bot_show">
+		<view class="quxiao_show" bindtap="ggopfn">取消</view>
+		<button class="btrnshou" style="color:white;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许 </button>
+	</view>
+</view>
+<view class="opsbjc" wx:if="{{!hasUserInfo}}" bindtap="ggopfn"></view>
+<view class="Shouquan {{isSiuser?'showavtibe':'showavtibes'}}">
+	<view class="top_show">
+		<image src="../../image/logo.png"></image>
+		<view class="tit_show">Re睿·国际创忆馆</view>
+	</view>
+	<view class="title_showdelit">
+		获取你的手机号
+	</view>
+	<view class="bot_show">
+		<view class="quxiao_show" bindtap="ggopfns">取消</view>
+		<button class="btrnshou" style="color:white;" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">允许 </button>
+	</view>
+</view>
+<view class="opsbjc" wx:if="{{isSiuser}}" bindtap="ggopfns">
+</view>
+<view class="top_img">
+	<image src="http://ticket.thid.cn/public/uploads/image/indexbj1.png"></image>
+</view>
+<view class="vip_img">
+	<image src="{{index_div.image}}"></image>
+</view>
+<!-- <view class="moeny_pivr">单价￥{{index_div.price}}</view>
+<view class="tit_title">
+  <view class="title_left">购买数量</view>
+  <view class="btn_right">
+    <view class="jie" bindtap="deleFn">-</view>
+    <view class="num">{{num}}</view>
+    <view class="jia" bindtap="addFn">+</view>
+  </view>
+</view> -->
+<view class="cont_list {{tid==1?'active':''}}" bindtap="clickFn" data-id="1">
+	<view class="titl_left">单人卡</view>
+	<view class="mone_right"> ￥{{index_div.one_price}} <text style="text-decoration:line-through;color:gray;font-size:24rpx">￥{{index_div.original_price}}/年</text></view>
+</view>
+<view class="cont_list {{tid==2?'active':''}}" bindtap="clickFn" data-id="2">
+	<view class="titl_left">双人卡</view>
+	<view class="mone_right">￥{{index_div.two_price}} <text style="text-decoration:line-through;color:gray;font-size:24rpx">￥{{index_div.two_original_price}}/年</text></view>
+</view>
+<!-- <view class="fapiao_lit" wx:if="{{payid!=1}}">
+	<view class="left_fapiao">是否开具发票</view>
+	<view class="rigth_rideos">
+		<radio-group bindchange="ycfps">
+			<radio style="margin-right:50rpx;" value="1" checked>否</radio>
+			<radio style="margin-right:50rpx;" value="2">是</radio>
+		</radio-group>
+	</view>
+</view> -->
+<view class="fapiao_lit" wx:if="{{ridos_fa==2}}">
+	<view class="left_fapiao">发票抬头</view>
+	<view class="right_fapiaoval" bindtap="fapiaoFn">{{invoice_name?invoice_name:'请填写发票>'}}</view>
+</view>
+<view class="vip_txt">
+	<view class="title">{{index_div.name}}</view>
+	<view class="tit">
+		<rich-text nodes="{{index_div.note}}"></rich-text>
+	</view>
+</view>
+<view class="vip_txt">
+	<view class="title">会员激活说明</view>
+	<view class="tit">
+		<rich-text nodes="{{index_div.jihuo_note}}"></rich-text>
+	</view>
+</view>
+<view class="rideo">
+	<radio-group bindchange="ycfp">
+		<view class="zhifu_box" bindtap="riods">
+			<radio bindtap="riods" checked="{{ridos === '1' ? 'true' : ''}}" value="1"></radio>
+			<view class="left">
+				<view>已阅读并同意
+					<text catchtap="delitwenFns" style="color:#6E3978">《用户协议》</text>
+				</view>
+			</view>
+		</view>
+	</radio-group>
+</view>
+<view style="width:100%;height:150rpx;"></view>
+<view class="bot_fied">
+	<view class="moey" wx:if="{{allvippicker}}">优惠价￥{{allvippicker}}</view>
+	<view class="moey" wx:if="{{!allvippicker}}"></view>
+	<view class="vipsub" wx:if="{{!isbtnshow}}" bindtap="cwvipFn">成为会员</view>
+	<view class="vipsub" wx:if="{{isbtnshow}}">支付中...</view>
+</view>

@@ -1,0 +1,66 @@
+<view class="cont_list" >
+  <image class="imgfied" src="{{goshop_index.order_image}}"></image>
+  <view class="left-title">
+    <view class="top_title1">
+      <view class="toptit1">{{goshop_index.option_name}}</view>
+      <view class="toptit2">门票</view>
+    </view>
+    <view class="txt_gui">
+    </view>
+    <!-- <view class="time">有效期至：{{due_time_text}}</view> -->
+  </view>
+  <view class="status" >
+    {{goshop_index.status_name}}
+  </view>
+</view>
+<!-- <view class="list">
+  <view class="left">领取人姓名:</view>
+  <input placeholder="请输入购票人姓名" value=""></input>
+</view>
+<view class="list">
+  <view class="left">领取人身份证件:</view>
+  <input placeholder="请输入领取人身份证件" value=""></input>
+</view>
+<view class="list">
+  <view class="left">领取人联系方式:</view>
+  <input type="number" placeholder="请输入领取人联系方式" value=""></input>
+</view> -->
+<button open-type="share" class="btn" wx:if="{{!pid&&goshop_index.give_status==1}}">
+赠送
+</button>
+<view class="btn" wx:if="{{pid}}" bindtap="submit" wx:if="{{pid&&goshop_index.give_status==1}}">
+  领取
+</view>
+<view class="btn" wx:if="{{pid}}" wx:if="{{pid&&goshop_index.give_status==2}}">
+  已领取
+</view>
+<!--index.wxml-->
+<view class="Shouquan {{!hasUserInfo?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">Re睿·国际创忆馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的昵称、头像、及性别
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfn">取消</view>
+    <button class="btrnshou" style="color:white;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{!hasUserInfo}}" bindtap="ggopfn"></view>
+<view class="Shouquan {{isSiuser?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">Re睿·国际创忆馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的手机号
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfns">取消</view>
+    <button class="btrnshou" style="color:white;" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{isSiuser}}" bindtap="ggopfns">
+</view>

@@ -1,0 +1,32 @@
+<block wx:for="{{goshop_index}}">
+<view class="cont_lsit {{item.status==1?'cont_lsit':'cont_lsit1'}}"  bindtap="listcont" data-id="{{item.id}}">
+  <view class="status {{item.status==1?'status':'status1'}}">{{item.status_text}}</view>
+  <view class="left_moeny">
+    <view class="top_money">
+      <text>满</text>
+      <text style="font-size:20px;margin-left:14rpx;">{{item.full_price}}</text>
+    </view>
+    <view class="top_money">
+      <text>减</text>
+      <text style="font-size:20px;margin-left:14rpx;">{{item.reduce_price}}</text>
+    </view>
+  </view>
+  <view class="cont-deelit">
+    <view class="top_1">
+      <view class="tit_1">优惠券</view>
+      <view class="tit_2">{{item.name}}</view>
+    </view>
+    <view class="guize">
+      <!-- 使用规则:1. 优惠券仅限购买门票之用2. 单张订单限用1张满减券，按面值金额减免支付。优惠券不能进行兑现、出售等用途 -->
+    </view>
+    <view class="time_end">有效期:{{item.endtime_text}}</view>
+<button open-type="share" class="buttn" wx:if="{{item.status==1}}" data-id="{{item.id}}" >赠送</button>
+
+  </view>
+</view>
+</block>
+
+<view style="width:100%;height:100rpx;"></view>
+<!-- <view class="btn" bindtap="allyouhj">
+  领取更多优惠劵
+</view> -->

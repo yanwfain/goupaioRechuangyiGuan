@@ -1,0 +1,34 @@
+<view class="top_img">
+  <image src="http://ticket.thid.cn/public/uploads/image/indexbj1.png"></image>
+</view>
+<view class="vip_img">
+  <view class="nocode" wx:if="{{user_list.vip_code&&user_list.vip_status==2}}"> VVVIP：{{user_list.vip_code}}</view>
+  <image src="{{vipimg.image}}"></image>
+</view>
+<view class="list" style="border-top:2rpx solid #E5E5E5;margin-top:50rpx;">
+  <view class="left">姓名:</view>
+  <view class="right">{{user_list.realname}}</view>
+</view>
+<view class="list">
+  <view class="left">身份证:</view>
+  <view class="right">{{id_num}}</view>
+</view>
+<view class="list">
+  <view class="left">手机号:</view>
+  <view class="right">{{user_list.mobile}}</view>
+</view>
+<view class="list">
+  <view class="left">到期时间:</view>
+  <view class="right">{{user_list.card_end_time}}</view>
+</view>
+<view class="list">
+  <view class="left">用户状态:</view>
+  <view class="right" style="color:#834e8b">{{user_list.is_vip_name}}</view>
+</view>
+
+<view class="vip_txt">
+  <!-- <view class="title">会员权益介绍</view> -->
+  <view class="tit">
+   <rich-text nodes="{{vipimg.note}}"></rich-text>
+  </view>
+</view>

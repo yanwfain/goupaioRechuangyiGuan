@@ -1,0 +1,32 @@
+<view class="top_top1">
+  *您好友佘猪猪为您赠送一张门票，点击下方可领取哦～
+</view>
+<view class="cont_list" >
+  <view class="left-title">
+    <view class="top_title1">
+      <view class="toptit1">XXX门票</view>
+      <view class="toptit2">佘猪猪</view>
+    </view>
+    <view class="txt_gui">使用规则：将门票的识别码打开，前往 展会一层前台找工作人员进行扫码进入
+    </view>
+    <view class="time">有效期：2020-02-02至2020-03-24</view>
+  </view>
+  <view class="status" >
+    赠票
+  </view>
+</view>
+<view class="list">
+  <view class="left">领取人姓名:</view>
+  <input placeholder="请输入领取人姓名" value=""></input>
+</view>
+<view class="list">
+  <view class="left">领取人身份证件:</view>
+  <input placeholder="请输入领取人身份证件" value=""></input>
+</view>
+<view class="list">
+  <view class="left">领取人联系方式:</view>
+  <input type="number" placeholder="请输入领取人联系方式" value=""></input>
+</view>
+<view class="btn">
+  立即领取
+</view>

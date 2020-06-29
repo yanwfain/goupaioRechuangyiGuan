@@ -1,0 +1,44 @@
+<!-- <view class="top_inp">
+  <input class="inp1" placeholder="请输入16位会员激活号"></input>
+  <view class="btnjh">点击激活</view>
+</view> -->
+<view class="top_lis">
+	*为进一步保障公共安全，请您根据提示填写真实个人信息，我们将遵守个人信息隐私保密相关规定，不予泄露相关信息。
+</view>
+<view class="vip_img">
+	<image src="{{interger.image}}"></image>
+</view>
+<view class="list_suer">
+	<view class="name">姓名</view>
+	<input class="inp_1" bindinput="vip_name" placeholder="请输入姓名" value="{{vip_name}}"></input>
+</view>
+<view class="list_suer">
+	<view class="name">电话</view>
+	<input class="inp_1" bindinput="vip_mobile" placeholder="请输入电话" value="{{vip_mobile}}"></input>
+</view>
+<view class="list_suer">
+	<view class="name">身份证</view>
+	<input class="inp_1" bindinput="vip_id_num" placeholder="请输入身份证" value="{{vip_id_num}}"></input>
+</view>
+<view class="list_suer" wx:if="{{isShow}}">
+	<view class="name">会员卡号</view>
+	<view style="display:flex;align-items: center;width:50%">
+		<view>Re-</view>
+		<input class="inp_1" style="width:70%;" bindinput="code" placeholder="请输入会员卡号" value="{{code}}"></input>
+	</view>
+</view>
+<view class="btnjhss" bindtap="submiteFn">立即激活</view>
+<view class="vip_txt">
+	<view class="title">激活说明</view>
+	<view class="tit">
+		<rich-text nodes="{{interger.jihuo_note}}"></rich-text>
+
+	</view>
+</view>
+<view class="vip_txt">
+	<!-- <view class="title">会员权益介绍</view> -->
+	<view class="tit">
+		<rich-text nodes="{{interger.note}}"></rich-text>
+
+	</view>
+</view>

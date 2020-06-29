@@ -1,0 +1,68 @@
+<view class="tab">
+  <view class="tab_vie {{tid==1?'active':''}}" data-id="1" bindtap="clickFn">未赠送</view>
+  <view class="tab_vie {{tid==2?'active':''}}" data-id="2" bindtap="clickFn">已赠送</view>
+  <view class="tab_vie {{tid==3?'active':''}}" data-id="3" bindtap="clickFn">已领取</view>
+</view>
+<block wx:for="{{movieList}}" wx:key="index">
+  <view class="cont_list" wx:if="{{item.give_status==1}}" data-due_time_text="{{item.due_time_text}}" data-goods_name="{{item.goods_name}}" data-id="{{item.id}}" bindtap="zengsong">
+       <image class="imgfied" src="{{item.order_image}}"></image>
+
+    <view class="left-title">
+      <view class="top_title1">
+        <view class="toptit1">{{item.option_name}}</view>
+        <view class="toptit2"></view>
+      </view>
+      <view class="txt_gui">
+      </view>
+      <!-- <view class="time">有效期至：{{item.due_time_text}}</view> -->
+    </view>
+    <view class="status">
+      {{item.status_name}}
+    </view>
+  </view>
+  <view class="cont_list" wx:if="{{item.give_status==2}}" bindtap="lookdelit" data-id="{{item.id}}">
+    <image class="imgfied" src="{{item.order_image}}"></image>
+     <view class="left-title">
+      <view class="top_title1">
+        <view class="toptit1">{{item.option_name}}</view>
+        <view class="toptit2"></view>
+      </view>
+      <view class="txt_gui">
+      </view>
+      <view class="time"></view>
+    </view>
+    <view class="status_2">
+      {{item.status_name}}
+    </view>
+  </view>
+    <view class="cont_list" bindtap="btnlinqu" wx:if="{{item.give_status==3}}">
+    <image class="imgfied" src="{{item.order_image}}"></image>
+
+     <view class="left-title">
+      <view class="top_title1">
+        <view class="toptit1">{{item.option_name}}</view>
+        <view class="toptit2"></view>
+      </view>
+      <view class="txt_gui">
+      </view>
+      <view class="time"></view>
+    </view>
+    <view class="status_2">
+      {{item.status_name}}
+    </view>
+  </view>
+</block>
+<!-- <view class="cont_list" >
+  <view class="left-title">
+    <view class="top_title1">
+      <view class="toptit1">XXX门票</view>
+      <view class="toptit2">佘猪猪</view>
+    </view>
+    <view class="txt_gui">使用规则：将门票的识别码打开，前往 展会一层前台找工作人员进行扫码进入
+    </view>
+    <view class="time">有效期：2020-02-02至2020-03-24</view>
+  </view>
+  <view class="status" bindtap="zengsong">
+    赠送
+  </view>
+</view> -->

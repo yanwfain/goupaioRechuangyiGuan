@@ -1,0 +1,125 @@
+<view class="Shouquan {{!hasUserInfo?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">国际创艺馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的昵称、头像、及性别
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfn">取消</view>
+    <button class="btrnshou" style="color:white;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{!hasUserInfo}}" bindtap="ggopfn"></view>
+<view class="Shouquan {{isSiuser?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">国际创艺馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的手机号
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfns">取消</view>
+    <button class="btrnshou" style="color:white;" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{isSiuser}}" bindtap="ggopfns">
+</view>
+<view class="top_mimg">
+  <view class="top_userimg" bindtap="userxinxi">
+    <view class="top_left">
+      <block wx:if="{{nickName}}">
+        <image class="img_userhead" src="{{headimg}}"></image>
+        <view class="vvv" wx:if="{{is_vip==2}}">V</view>
+        <view class="name_top_user">{{nickName}}</view>
+      </block>
+      <block wx:if="{{!nickName}}">
+        <view class="name_top_user">未授权</view>
+      </block>
+    </view>
+    <view class="txtj"></view>
+  </view>
+  <view class="vip_dvimg" bindtap="vipsFn" wx:if="{{is_vip==2}}">
+    <view class="nocode" wx:if="{{ment_list.vip_code&&ment_list.vip_status==2}}">VVVIP：{{ment_list.vip_code}}</view>
+    <image class="vip-img" src="{{vipimg.image}}"></image>
+  </view>
+
+  <view class="vip_dv" bindtap="vip_jiFn" wx:elif="{{is_vip==3}}">
+    <view class="txt">
+      会员未开卡
+      <text style="font-size:24rpx;">(我的订单-未使用-会员卡-待激活)</text>
+    </view>
+    <view class="txtj" style="margin-right:34px;"></view>
+  </view>
+  <view class="vip_dv" bindtap="vipFn" wx:else>
+    <view class="txt">
+      加入会员，免费参观
+    </view>
+    <view class="txtj" style="margin-right:34px;"></view>
+  </view>
+</view>
+<view class="cont_cpon">
+  <view class="cont_list" bindtap="swipermepiao">
+    <view class="cont_left_list">
+      <image style="width:28px;height:22px;margin-right:2px;" src="http://ticket.thid.cn/public/uploads/image/wdmp.png"></image>
+      <view class="titl_cont_left">我的订单</view>
+    </view>
+    <view class="cont_right_list">
+      <view class="renz_S"></view>
+      <view class="txtjs" style=""></view>
+    </view>
+  </view>
+  <view class="cont_list"  bindtap="huibpltios">
+    <view class="cont_left_list">
+      <image style="width:28px;height:22px;margin-right:2px;" src="http://ticket.thid.cn/public/uploads/image/wdmp.png"></image>
+      <view class="titl_cont_left">我的优惠劵</view>
+    </view>
+    <view class="cont_right_list">
+      <view class="renz_S"></view>
+      <view class="txtjs" style=""></view>
+    </view>
+  </view>
+  <view class="cont_list" bindtap="medemenpFn">
+    <view class="cont_left_list">
+      <image style="width:28px;height:26px;margin-right:2px" src="http://ticket.thid.cn/public/uploads/image/zs.png"></image>
+      <view class="titl_cont_left">我的赠送门票</view>
+    </view>
+    <view class="cont_right_list">
+      <view class="renz_S"></view>
+      <view class="txtjs" style=""></view>
+    </view>
+  </view>
+  <view class="cont_list" bindtap="shimFn">
+    <view class="cont_left_list">
+      <image style="width:30px;height:22px;" src="http://ticket.thid.cn/public/uploads/image/smxx.png"></image>
+      <view class="titl_cont_left">实名信息</view>
+    </view>
+    <view class="cont_right_list">
+      <view class="renz_S">{{ment_list.is_authenticat_name}}</view>
+      <view class="txtjs" style=""></view>
+    </view>
+  </view>
+  <view class="cont_list" bindtap="chuxingmanlist">
+    <view class="cont_left_list">
+      <image style="width:25px;height:22px;margin-right:3px;" src="http://ticket.thid.cn/public/uploads/image/cxr.png"></image>
+      <view class="titl_cont_left">出行人信息</view>
+    </view>
+    <view class="cont_right_list">
+      <view class="renz_S"></view>
+      <view class="txtjs" style=""></view>
+    </view>
+  </view>
+  <view class="cont_list" bindtap="fapiaoGuan" style="border:none">
+    <view class="cont_left_list">
+      <image style="width:30px;height:28px;margin-right:3px;" src="http://ticket.thid.cn/public/uploads/image/fapiao.png"></image>
+      <view class="titl_cont_left">发票管理</view>
+    </view>
+    <view class="cont_right_list">
+      <view class="renz_S"></view>
+      <view class="txtjs" style=""></view>
+    </view>
+  </view>
+</view>
+<view style="width:100%;height:100rpx;"></view>

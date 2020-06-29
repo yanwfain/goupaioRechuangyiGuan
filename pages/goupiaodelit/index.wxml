@@ -1,0 +1,44 @@
+<view class="searchBox">
+  <!-- <view class="title" style="top:{{statusBarHeight+10}}px;">门票详情</view> -->
+  <swiper class='shop_swiper' indicator-dots autoplay="true" indicator-active-color="#fff" interval="3000" duration="1000" circular='true' hidden='{{luboActive}}'>
+    <block wx:for="{{goshop_index.images}}" wx:key="index">
+      <swiper-item class="imgheight">
+        <image src="{{item}}" class='lbImg' data-id='{{item.id}}' data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="cont_cont">
+  <view class="title_cont">{{goshop_index.title}}</view>
+  <view class="time_cont"> 时间：{{goshop_index.start}}~{{goshop_index.end}}</view>
+  <view class="bot_delit">
+    <view class="moeny">￥{{goshop_index.price}} <text style="text-decoration:line-through;font-size:26rpx;color:gray">￥{{goshop_index.original_price}}</text></view>
+    <view class="yitxt">已售:{{goshop_index.sell_num}}</view>
+  </view>
+</view>
+<view class="vipBtn" bindtap="vipFn" wx:if="{{is_vip==1}}">
+  <view class="left-txt">加入会员，免费参观</view>
+  <view class="jijantou"></view>
+</view>
+<view class="cont_delit">
+  <view class="tab">
+    <view class="tab-view {{tid==1?'active':''}}" data-id="1" bindtap="clickTan">展览介绍</view>
+    <view class="tab-view {{tid==2?'active':''}}" data-id="2" bindtap="clickTan">购票须知</view>
+  </view>
+  <!-- <view class="tit_delit" wx:if="{{tid==1}}">
+    展览介绍
+  </view> -->
+  <view class="txt_delit" wx:if="{{tid==1}}">
+   <rich-text nodes="{{goshop_index.introduce}}"></rich-text>
+  </view>
+    <!-- <view class="tit_delit" wx:if="{{tid==2}}">
+    购买须知
+  </view> -->
+  <view class="txt_delit" wx:if="{{tid==2}}">
+   <rich-text nodes="{{goshop_index.note}}"></rich-text>
+  </view>
+</view>
+<view style="width:100%;height:100rpx;"></view>
+<view class="btnsubmit" bindtap="sunmit" wx:if="{{goshop_index.status==2}}">
+    立即购买
+</view>

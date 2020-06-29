@@ -1,0 +1,240 @@
+<view class="cont">
+  <view class="cont_top">
+    <image src="{{g_list.images[0]}}"></image>
+    <view class="right_delit">
+      <view class="title_1">
+        <text>{{g_list.title}}</text>
+        <!-- <text style="font-size:30rpx;color:#7c2b88;margin-left:30rpx;"><text style="text-decoration:line-through;font-size:26rpx;color:gray;margin-right:10rpx;">￥{{g_list.original_price}}/张 </text> ￥{{price_tab}}  </text> -->
+      </view>
+      <view class="title_1">
+        <text style="font-size:30rpx;color:#7c2b88;">￥{{price_tab}}  <text style="text-decoration:line-through;font-size:26rpx;color:gray;margin-right:10rpx;">￥{{g_list.original_price}}/张 </text> </text>
+      </view>
+      <view class="title_2">展期：{{g_list.start}}~{{g_list.end}}</view>
+      <view class="btn_sele">
+        <block wx:if="{{sid==1}}">
+          <view class="btn active" style="margin-right:30rpx;" data-id="{{item.id}}" data-price="{{item.price}}" data-name="{{item.name}}">{{option_name}}</view>
+        </block>
+        <block wx:else>
+          <view wx:for="{{g_list.option}}" class="btn {{bid==item.id?'active':''}}" style="margin-right:30rpx;" data-id="{{item.id}}" data-price="{{item.price}}" data-name="{{item.name}}" bindtap="clickFn">{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="delit_usernum">
+    <view class="tit_title">
+      <view class="title_left">订票人信息</view>
+      <view class="btn_right">
+        <view class="jie" bindtap="deleFn">-</view>
+        <view class="num">{{num}}</view>
+        <view class="jia" bindtap="addFn">+</view>
+      </view>
+    </view>
+    <view class="cont_list_1" wx:for="{{listuser}}" wx:key="index">
+
+      <block wx:if="{{item.name}}" wx:key="index">
+        <view class="cont_list" bindtap="eeditFn" data-index="{{index}}" data-id="{{item.id}}" data-id_num="{{item.id_num}}" data-name="{{item.name}}" data-mobile="{{item.mobile}}">
+          <view class="user_delitss">
+            <view class="name">{{item.name}}</view>
+            <view class="name_num">{{item.id_num}}</view>
+          </view>
+          <view class="txt_j"></view>
+        </view>
+      </block>
+      <block wx:if="{{!item.name}}">
+        <view catchtap="addUserfn" class="btn_add">添加订票人信息</view>
+      </block>
+    </view>
+  </view>
+  <view class="title_youhui">
+    优惠
+  </view>
+  <view class="tit_numke">
+    <image src="http://ticket.thid.cn/public/uploads/image/youhui.png"></image>
+    <view class="right_youhui" bindtap="binjuanFn" wx:if="{{g_list.coupan_num>=1&&!you_name}}">
+      有{{g_list.coupan_num}}张优惠券可使用>
+    </view>
+    <view class="right_youhui" wx:if="{{g_list.coupan_num>=1&&you_name}}" bindtap="binjuanFn">{{you_name}} > </view>
+    <view class="right_youhui" wx:if="{{g_list.coupan_num<1}}">
+      暂无可用优惠劵
+    </view>
+  </view>
+  <!-- <view class="fapiao_lit" wx:if="{{sid!=1}}">
+    <view class="left_fapiao">是否开具发票</view>
+    <view class="rigth_rideos">
+      <radio-group bindchange="ycfps">
+        <radio style="margin-right:50rpx;" value="1" checked>否</radio>
+        <radio style="margin-right:50rpx;" value="2">是</radio>
+      </radio-group>
+    </view>
+  </view> -->
+  <view class="fapiao_lit" wx:if="{{ridos_fa==2}}">
+    <view class="left_fapiao">发票抬头</view>
+    <view class="right_fapiaoval" bindtap="fapiaoFn">{{invoice_name?invoice_name:'请填写发票>'}}</view>
+  </view>
+</view>
+<view class="rideo">
+  <radio-group bindchange="ycfp">
+    <view class="zhifu_box" bindtap="riods">
+      <radio bindtap="riods" checked="{{ridos === '1' ? 'true' : ''}}" value="1"></radio>
+      <view class="left">
+        <view>已阅读并同意
+          <text catchtap="delitwenFns" style="color:#cdb5dc">《用户协议》</text>
+        </view>
+      </view>
+    </view>
+  </radio-group>
+</view>
+<view class="red_bot" wx:if="{{sid&&status==1}}" bindtap="deleorder">取消订单</view>
+<view class="bot_fixed">
+  <view class="left_money">
+    <view class="allMoney">合计￥{{all_picker}}</view>
+    <view class="jie_money">已优惠{{jian_num}}</view>
+  </view>
+  <view class="submit_money" wx:if="{{!isbtnshow}}" bindtap="submit_money">立即支付</view>
+  <view class="submit_money" wx:if="{{isbtnshow}}">支付中...</view>
+
+</view>
+<view class="bot_add {{addShow?'top_bot_add':'bop_bot_add'}}">
+  <block wx:if="{{addShow==1}}">
+    <view class="top_1">
+      <view class="quxoap" bindtap="quxiao">取消</view>
+      <view class="top_1_title">添加订票人</view>
+      <view class="okres" bindtap="submit_userde">完成</view>
+    </view>
+    <view class="top_1">
+      <view class="top_1_name">姓名</view>
+      <input placeholder="请输入您的姓名" value="{{name}}" bindinput="name"></input>
+    </view>
+    <view class="top_1">
+      <view class="top_1_name">身份证件</view>
+      <input placeholder="请输入您的身份证件" value="{{id_num}}" bindinput="id_num"></input>
+    </view>
+    <view class="top_1">
+      <view class="top_1_name">联系方式</view>
+      <input placeholder="请输入您的联系方式" value="{{mobile}}" bindinput="mobile"></input>
+    </view>
+    <view class="btnsubmit" bindtap="submit_userde">
+      确定
+    </view>
+  </block>
+  <block wx:if="{{addShow==5}}">
+    <block wx:if="{{sid==1&&ridos_fa==2}}">
+      <view class="top_1">
+        <view class="quxoap" bindtap="quxiao">取消</view>
+        <view class="top_1_title">开具发票</view>
+        <view class="okres" bindtap="submitfap">完成</view>
+      </view>
+      <view class="top_1">
+        <view class="top_1_name">公司名称</view>
+        <input placeholder="请输入公司名称" disabled value="{{}}" bindinput="" />
+      </view>
+      <view class="top_1">
+        <view class="top_1_name">公司税号</view>
+        <input placeholder="请输入公司税号" disabled value="{{}}" bindinput=""></input>
+      </view>
+      <view class="top_1">
+        <view class="top_1_name">电子邮箱</view>
+        <input placeholder="用于向您发送电子发票" disabled value="{{}}" bindinput=""></input>
+      </view>
+      <view class="btnsubmit" bindtap="submitfap">
+        确定
+      </view>
+    </block>
+    <block wx:if="{{ridos_fa==2&&sid!=1}}">
+      <view class="top_1">
+        <view class="quxoap" bindtap="quxiao">取消</view>
+        <view class="top_1_title">开具发票</view>
+        <view class="okres" bindtap="submitfap">完成</view>
+      </view>
+      <view class="top_1">
+        <view class="top_1_name">公司名称</view>
+        <input placeholder="请输入公司名称" value="{{}}" bindinput="" />
+      </view>
+      <view class="top_1">
+        <view class="top_1_name">公司税号</view>
+        <input placeholder="请输入公司税号" value="{{}}" bindinput=""></input>
+      </view>
+      <view class="top_1">
+        <view class="top_1_name">电子邮箱</view>
+        <input placeholder="用于向您发送电子发票" value="{{}}" bindinput=""></input>
+      </view>
+      <view class="top_1" bindtap="xuanze_fp">
+        <view class="top_1_name" style="color:red;font-size:26rpx;">去我的发票选择  </view>
+       <view class="txt_j"></view>
+      </view>
+      <view class="btnsubmit" bindtap="submitfap">
+        确定
+      </view>
+    </block>
+
+  </block>
+  <block wx:if="{{addShow==2}}">
+
+    <view class="top_1">
+      <view class="quxoap" bindtap="quxiao">取消</view>
+      <view class="top_1_title">编辑出行人</view>
+      <view class="okres" bindtap="submitbianji">完成</view>
+    </view>
+    <view class="top_1">
+      <view class="top_1_name">姓名</view>
+      <input placeholder="请输入您的姓名" value="{{name}}" bindinput="name"></input>
+    </view>
+    <view class="top_1">
+      <view class="top_1_name">身份证件</view>
+      <input placeholder="请输入您的身份证件" value="{{id_num}}" bindinput="id_num"></input>
+    </view>
+    <view class="top_1">
+      <view class="top_1_name">联系方式</view>
+      <input placeholder="请输入您的联系方式" value="{{mobile}}" bindinput="mobile"></input>
+    </view>
+    <view class="btnsubmit" bindtap="submitbianji">
+      确定
+    </view>
+  </block>
+  <block wx:if="{{addShow==3}}">
+    <view class="top_adds" bindtap="addtinajiaFn">
+      <view style="font-size:46rpx;margin-right:10rpx;margin-top:-5rpx;">+</view>
+      <view>添加出行人</view>
+    </view>
+    <view class="guanli_titls" bindtap="guan_chu">管理我的出行人></view>
+    <view class="borderb"></view>
+    <view class="socllock">
+      <!-- <checkbox-group bindchange="checkboxChange"> -->
+      <view class="list_chuser" wx:for="{{goshop_index}}" bindtap="listFn" data-id="{{item.id}}" data-id_num="{{item.id_num}}" data-name="{{item.name}}" data-mobile="{{item.mobile}}">
+        <radio data-id="{{item.id}}" value="{{item.id}}" checked="{{list_id == item.id ? 'true' : ''}}"></radio>
+        <view class="users">
+          <view>{{item.name}}</view>
+          <view>{{item.id_num}}</view>
+        </view>
+        <!-- <view class="bianji" catchtap="submitbianji"  data-id="{{item.id}}" data-id_num="{{item.id_num}}" data-name="{{item.name}}" data-mobile="{{item.mobile}}">编辑</view> -->
+      </view>
+      <!-- </checkbox-group> -->
+    </view>
+    <view class="btnsubmit" bindtap="wancheng">完成</view>
+  </block>
+  <block wx:if="{{addShow==4}}">
+    <view class="socllocks">
+      <view class="cont_youlist" wx:for="{{youhui_list}}" data-id="{{item.id}}" data-reduce_price="{{item.reduce_price}}" data-name="{{item.name}}" data-full_price="{{item.full_price}}" bindtap="inyouhuiFn">
+        <view class="left_juan">
+          <view class="font_left">
+            <text style="margin-right:20rpx;">满</text>
+            <text style="font-weight: 600;font-size:36rpx;">{{item.full_price}}</text>
+          </view>
+          <view class="font_left">
+            <text style="margin-right:20rpx;margin-left:-22rpx;">减</text>
+            <text style="font-weight: 600;font-size:36rpx;">{{item.reduce_price}}</text>
+          </view>
+        </view>
+        <view class="center_cont">
+          <view class="top_juantit">门票优惠券通用</view>
+          <view class="endTime">截止日期</view>
+          <view class="end_time">{{item.endtime_text}}</view>
+        </view>
+        <radio  data-id="{{item.id}}" value="{{item.id}}" checked="{{list_idhui == item.id ? 'true' : ''}}"></radio>
+      </view>
+    </view>
+    <view class="red_bot" bindtap="delehui">不使用任何优惠劵</view>
+    <view class="btnsubmit" bindtap="juanSub">确认</view>
+  </block>
+</view>
+<view class="opstiy" bindtap="overshow" wx:if="{{addShow}}"></view>

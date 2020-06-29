@@ -1,0 +1,25 @@
+<view class="top_lis">
+  *为确保公共安全，请您填写真实的个人信息，我们将遵守个人信息隐私保密相关规定，不予泄露相关信息。
+</view>
+<view class="list">
+  <view class="left">姓名</view>
+  <input placeholder="请输入姓名" bindinput="realname" value="{{realname}}"></input>
+</view>
+<view class="list">
+  <view class="left">身份证</view>
+  <input placeholder="请输入身份证" bindinput="id_num" value="{{id_num}}"></input>
+</view>
+<view class="list">
+  <view class="left">联系方式</view>
+  <input placeholder="请输入联系方式" bindinput="mobile" value="{{mobile}}"></input>
+</view>
+<view class="list">
+  <view class="left">邮箱</view>
+  <input placeholder="用于接收电子发票" bindinput="email" value="{{email}}"></input>
+</view>
+<view class="btn" bindtap="submit" wx:if="{{!istxt}}">
+  保存
+</view>
+<view class="btn" bindtap="submit" wx:if="{{istxt}}">
+  保存中
+</view>

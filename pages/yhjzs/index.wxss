@@ -1,0 +1,236 @@
+/* pages/youhuijuan/index.wxss */
+
+page {
+  background: #fbfcfd;
+}
+
+.cont_lsit {
+  width: 94%;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  background: url(http://ticket.thid.cn/public/uploads/image/youhuijuan.png) center no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.left_moeny {
+  width: 30%;
+}
+
+.top_money {
+  width: 84%;
+  margin: 0 auto;
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.cont-deelit {
+  width: 64%;
+  padding: 10rpx 0;
+  margin-right: 5%;
+  margin-left: 1%;
+}
+
+.top_1 {
+  font-size: 36rpx;
+
+    display: flex;
+  align-items: center;
+}
+.tit_1{
+   font-size: 36rpx;
+   font-weight: 600;
+}
+.tit_2 {
+  font-size: 30rpx;
+  margin-left:20rpx;
+  color: #333333;
+}
+.guize{
+  padding: 10rpx 0;
+  color: #666666;
+  font-size: 26rpx;
+}
+.time_end{
+   color: #999999;
+  font-size: 24rpx;
+}
+.status{
+  position: absolute;
+  font-size: 24rpx;
+   /* transform: rotate(45deg);
+   top: 32rpx;
+   right: 10rpx; */
+        transform: rotate(48deg);
+   top: 42rpx;
+   right: 12rpx;
+   color: white;
+}
+.btn{
+  position: fixed;
+  left:0%;
+  bottom: 0%;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #6E3978;
+  color: white;
+  text-align: center;
+}
+button{
+  border-radius: 0;
+}
+page {
+  background: #fbfcfd;
+}
+
+.Shouquan {
+  position: fixed;
+  z-index: 99;
+  width:100%;
+  left: 0;
+  padding: 20rpx 0 0 0;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
+  background: white;
+  overflow: hidden;
+ transition: all .8;
+}
+.showavtibe{
+  transition: all .8;
+  bottom:0%;
+}
+.showavtibes{
+ transition: all .8;
+  bottom:-100%;
+}
+.top_show{
+  padding: 14rpx;
+  display: flex;
+  align-items: center;
+
+}
+.top_show image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 30rpx;
+  
+}
+.tit_show{
+  font-weight:600;
+  font-size: 34rpx;
+
+}
+.title_showdelit {
+  padding: 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.bot_show{
+  width: 66%;
+  margin: 0 auto;
+  margin-top:50rpx;
+  margin-bottom:100rpx;
+  display: flex;
+  justify-content: space-between;
+
+}
+.quxiao_show{
+  width: 230rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 14rpx;
+  background: #ECEDEE;
+  color: #00C25F;
+
+}
+.btrnshou{
+    width: 230rpx;
+  height: 76rpx;
+  line-height:76rpx;
+  text-align: center;
+  border-radius: 14rpx;
+  background: #00C25F;
+  color: #FFFFFF;
+  font-size: 30rpx;
+}
+.titless {
+  width: 100%;
+  text-align: center;
+}
+
+.cont_tltsops {
+  width: 90%;
+  text-align: center;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.btn_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2rpx solid #ccc;
+}
+
+.quxiao_btn {
+  width: 49%;
+  border-right: 2rpx solid #ccc;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+}
+
+.butn_bottys {
+  width: 49%;
+  text-align: center;
+  line-height: 100rpx;
+  color: rgb(41, 121, 41);
+  font-size: 30rpx;
+}
+
+button {
+  border: none;
+}
+
+button::after {
+  border: none;
+}
+
+.getUser {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  background: rgb(20, 141, 20);
+  color: white;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.opsbjc {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+  opacity: 0.8;
+  background: black;
+}

@@ -1,0 +1,104 @@
+<!--index.wxml-->
+<view class="Shouquan {{!hasUserInfo?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">Re睿·国际创忆馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的昵称、头像、及性别
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfn">取消</view>
+    <button class="btrnshou" style="color:white;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{!hasUserInfo}}" bindtap="ggopfn"></view>
+<view class="Shouquan {{isSiuser?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">Re睿·国际创忆馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的手机号
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfns">取消</view>
+    <button class="btrnshou" style="color:white;" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{isSiuser}}" bindtap="ggopfns">
+</view>
+<view class="top_idnex">
+  <view class="index_title" style="top:{{statusBarHeight+10}}px">Re睿·国际创忆馆</view>
+  <image src="http://ticket.thid.cn/public/uploads/image/indexbj1.png"></image>
+</view>
+<view class="searchBox">
+  <swiper class='shop_swiper' indicator-dots autoplay="true" indicator-active-color="#fff" interval="3000" duration="1000" circular='true' hidden='{{luboActive}}'>
+    <block wx:for="{{index_div.images}}" wx:key="index">
+      <swiper-item class="imgheight">
+        <image src="{{item}}" class='lbImg' data-id='{{item.id}}' data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="title-strt">
+  <view class="leftct-1">正在展出</view>
+  <view class="ct-1"></view>
+  <view class="rightct-1">WHAT IS ON</view>
+</view>
+<view class="cont_zhanbo" data-id="{{index_div.goods_id}}" bindtap="binddelitgop">
+  <view class="cont_content">
+    <image src="{{index_div.goods_image}}"></image>
+    <view class="content_bottom">{{index_div.goods.title}}</view>
+    <view class="content_time">{{index_div.goods.start_time}}~{{index_div.goods.due_time}}</view>
+  </view>
+
+</view>
+<view class="cont_zhanbo" data-id="{{index_div.goods_id}}" bindtap="binddelitgops">
+  <view class="cont_content">
+    <image src="{{index_div.activity_image}}"></image>
+    <view class="content_bottom">{{index_div.activity_name}}</view>
+  </view>
+</view>
+<view class="cont_niterogn">
+  <view class="left_1" bindtap="vip_bindFN">
+    <image src="http://ticket.thid.cn/public/uploads/image/jiaruhuiyuan.png"></image>
+  </view>
+  <view class="left_1" bindtap="vipJihuo">
+    <image src="http://ticket.thid.cn/public/uploads/image/jihuovip.png"></image>
+  </view>
+</view>
+
+<view class="cont_niterogns" style="">
+  <image class="img_icon" src="http://ticket.thid.cn/public/uploads/image/indexicon.png"></image>
+  <view class="cont_nititle">展馆介绍</view>
+  <view class="starttime">
+     <rich-text nodes="{{index_div.note}}"></rich-text>
+  </view>
+</view>
+<view class="cont_niterogns" style="">
+  <image class="img_icon" src="http://ticket.thid.cn/public/uploads/image/indexicon.png"></image>
+  <view class="cont_nititle">参观指南</view>
+  <view class="starttime">开放时间</view>
+  <view class="day_time">{{index_div.opentime}}</view>
+  <view class="day_time">{{index_div.start_hour}}</view>
+  <view class="starttime" style="margin-top:50rpx;">联系我们</view>
+  <view class="user_lianxi" data-mobile="{{index_div.mobile}}" bindtap="open">
+    <image src="../../image/tel.png"></image>
+    <view class="txt">{{index_div.mobile}}</view>
+  </view>
+  <view class="user_lianxi" bindtap="copyFn">
+    <image style="height:32rpx;" src="http://ticket.thid.cn/public/uploads/image/youxiang.png"></image>
+    <view class="txt">{{index_div.email}}</view>
+  </view>
+  <view class="starttime" style="margin-top:50rpx;">参观地址</view>
+  <view class="user_lianxi">
+    {{index_div.name}}
+  </view>
+  <view class="user_lianxi" style="">
+    {{index_div.address}}
+  </view>
+</view>
+<view class="" hover-class="none" hover-stop-propagation="false" style="width:90%; height:380rpx;margin:0 auto;margin-top:20rpx;">
+  <map id="map" longitude="116.151929" latitude="39.923399" markers="{{markers}}" scale="12" show-location style="width: 100%; height: 100%;" bindtap="click"></map>
+</view>

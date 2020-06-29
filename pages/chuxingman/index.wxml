@@ -1,0 +1,34 @@
+<view class="list" wx:for="{{goshop_index}}" >
+  <view class="deilt">
+    <view class="name">{{item.name}}</view>
+    <view class="num" style="color:rgb(190,190,190)">{{item.id_num}}</view>
+  </view>
+  <view class="btn_two">
+    <view bindtap="bianjiFn" data-id="{{item.id}}" data-mobile="{{item.mobile}}" data-name="{{item.name}}" data-id_num="{{item.id_num}}">编辑</view>
+    <view class="binji" bindtap="deleFn" data-id="{{item.id}}">删除</view>
+  </view>
+</view>
+<!-- <view class="list">
+  <view class="deilt">
+    <view class="name">王优秀</view>
+    <view class="num">140522200502120569</view>
+  </view>
+  <view class="btn_two">
+    <view >编辑</view>
+    <view class="binji">删除</view>
+  </view>
+</view>
+<view class="list">
+  <view class="deilt">
+    <view class="name">王优秀</view>
+    <view class="num">140522200502120569</view>
+  </view>
+  <view class="btn_two">
+    <view >编辑</view>
+    <view class="binji">删除</view>
+  </view>
+</view> -->
+<view style="width:100%;height:100rpx;"></view>
+<view class="posdeid" bindtap="addmanFn">
+  添加出行人
+</view>

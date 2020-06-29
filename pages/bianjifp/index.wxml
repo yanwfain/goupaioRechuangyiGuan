@@ -1,0 +1,18 @@
+<view class="top_lis">
+  *为确保公共安全，请您填写真实的信息，我们将遵 守个人信息隐私保密相关规定，不予泄露相关信息
+</view>
+<view class="list">
+  <view class="left">公司名称</view>
+  <input placeholder="请输入公司名称" bindinput="name" value="{{name}}"></input>
+</view>
+<view class="list">
+  <view class="left">公司税号</view>
+  <input placeholder="请输入公司税号" bindinput="id_num" value="{{id_num}}"></input>
+</view>
+<view class="list">
+  <view class="left">邮箱</view>
+  <input placeholder="用于向您发送电子发票" bindinput="mobile" value="{{mobile}}"></input>
+</view>
+<view class="btn" bindtap="btnsubmit">
+  保存
+</view>

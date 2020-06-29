@@ -1,0 +1,82 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/indexdome/index",
+    "pages/vipgogo/index",
+    "pages/jivip/index",
+    "pages/goup/index",
+    "pages/textindex/index",
+    "pages/mep/index",
+    "pages/allfapiao/index",
+    "pages/addlistfp/index",
+    "pages/indexdelitnot/index",
+    "pages/bianjifp/index",
+    "pages/userme/index",
+    "pages/viporder/index",
+    "pages/userxinxi/index",
+    "pages/shiming/index",
+    "pages/youhuijuan/index",
+    "pages/yhjzs/index",
+    "pages/allgdyhj/index",
+    "pages/memenp/index",
+    "pages/zengsong/index",
+    "pages/lingqu/index",
+    "pages/bianji/index",
+    "pages/addman/index",
+    "pages/chuxingman/index",
+    "pages/yesma/index",
+    "pages/yesvip/index",
+    "pages/goupiaodelit/index",
+    "pages/addorder/index",
+    "pages/orderdelit/index",
+    "pages/orderlokdelit/index",
+    
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#C9C9C9",
+    "selectedColor": "#834e8b",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/image/sy.png",
+        "selectedIconPath": "/image/sy1.png"
+      },
+      {
+        "pagePath": "pages/goup/index",
+        "text": "购票",
+        "iconPath": "/image/gp.png",
+        "selectedIconPath": "/image/gp1.png"
+      },
+      {
+        "pagePath": "pages/mep/index",
+        "text": "我的订单",
+        "iconPath": "/image/wodep.png",
+        "selectedIconPath": "/image/wodep1.png"
+      },
+      {
+        "pagePath": "pages/userme/index",
+        "text": "我的",
+        "iconPath": "/image/wode.png",
+        "selectedIconPath": "/image/wode1.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

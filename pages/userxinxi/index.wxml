@@ -1,0 +1,52 @@
+<view class="list">
+  <view class="left">头像:</view>
+  <image class="img_top" src="{{head_img}}"></image>
+</view>
+<view class="list">
+  <view class="left">昵称</view>
+  <input placeholder="请输入昵称" bindinput="nickName" value="{{nickName}}"></input>
+</view>
+<view class="list">
+  <view class="left">性别</view>
+  <view class="main-item-input">
+    <view class="main-item-input">
+      <picker bindchange="pickerProChange" value="{{ pickerProData.index }}" range="{{ pickerProData.items }}">
+        <view class="picker-area-text">
+          {{pickerProData.items[pickerProData.index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class="list">
+  <view class="left">电话</view>
+  <input placeholder="请输入电话" bindinput="mobile" value="{{mobile}}"></input>
+</view>
+<!-- <view class="list">
+  <view class="left">生日</view>
+  <view class="main-item-input">
+    <view class="main-item-input">
+      <picker bindchange="changeDate"  mode="date" value="{{date}}">
+        <view class="picker-area-text">
+          {{date_time?date_time:'请选择'}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view> -->
+<view class="list">
+  <view class="left">所在地</view>
+  <view class="main-item-input">
+    <view class="main-item-input">
+       <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker-area-text" wx:if="{{region!=''||!region||region!='null'}}">
+        {{region[0]}}{{region[1]}}{{region[2]}}
+      </view>
+      <view class="picker-area-text" wx:else>请选择</view>
+    </picker>
+    </view>
+  </view>
+</view>
+<view class="btn" bindtap="submit">
+  保存
+</view>

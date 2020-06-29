@@ -1,0 +1,47 @@
+<view class="Shouquan {{!hasUserInfo?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">Re睿·国际创忆馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的昵称、头像、及性别
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfn">取消</view>
+    <button class="btrnshou" style="color:white;" open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{!hasUserInfo}}" bindtap="ggopfn"></view>
+<view class="Shouquan {{isSiuser?'showavtibe':'showavtibes'}}">
+  <view class="top_show">
+    <image src="../../image/logo.png"></image>
+    <view class="tit_show">Re睿·国际创忆馆</view>
+  </view>
+  <view class="title_showdelit">
+    获取你的手机号
+  </view>
+  <view class="bot_show">
+    <view class="quxiao_show" bindtap="ggopfns">取消</view>
+    <button class="btrnshou" style="color:white;" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">允许 </button>
+  </view>
+</view>
+<view class="opsbjc" wx:if="{{isSiuser}}" bindtap="ggopfns">
+</view>
+<block wx:for="{{goshop_index}}">
+<view class="cont_gou" bindtap="goubtn" wx:if="{{item.status==2}}"  data-id="{{item.id}}">
+  <view class="title" wx:if="{{item.status==2}}">{{item.status_text}}</view>
+  
+  <image class="img_goupiao" src="{{item.images}}"></image>
+  <view class="txt-1">{{item.title}}</view>
+  <view class="txt-2">{{item.start_tim}}~{{item.due_tim}}</view>
+  <view class="bot_btn">去购票</view>
+</view>
+<view class="cont_gou" bindtap="goubtn" wx:if="{{item.status==1}}"  data-id="{{item.id}}">
+  <view class="title">历史展览</view>
+   <view class="status">{{item.status_text}}</view>
+  <image class="img_goupiao" src="{{item.images}}"></image>
+  <view class="txt-1">{{item.title}}</view>
+  <view class="txt-2">{{item.start_tim}}至{{item.due_tim}}</view>
+  <view class="bot_btn">{{item.status_text}}</view>
+</view>
+</block>

@@ -1,0 +1,99 @@
+/* pages/jivip/index.wxss */
+page{
+  background: #FBFCFD;
+}
+.top_inp{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.inp1{
+  background: white;
+  font-size: 28rpx;
+  color: #999999;
+  width: 76%;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 10rpx;
+}
+.btnjh{
+  width: 24%;
+  height: 70rpx;
+  color: white;
+  background: #2C3540;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+.btnjhss{
+    width: 70%;
+  height: 80rpx;
+  color: white;
+  background: #9035C9;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  border-radius: 60rpx;
+}
+.vip_img{
+  width: 90%;
+  margin: 0 auto;
+  height: 400rpx;
+  overflow: hidden;
+  border-radius: 18rpx;
+  margin-top: 40rpx;
+}
+.vip_img image{
+  width: 100%;
+  height: 100%;
+  
+}
+.vip_txt{
+  width: 86%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  overflow: hidden;
+}
+.title{
+  font-size: 36rpx;
+  font-weight: 600;
+  margin:20rpx 0;
+}
+.tit{
+  font-size: 30rpx;
+  color: #6d6b6b;
+}
+.list_suer{
+  padding: 20rpx;
+  /* border-bottom: 2rpx solid gray; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  margin-bottom: 2rpx;
+}
+.name{
+  width: 30%;
+  font-size: 32rpx;
+}
+.inp_1{
+  width: 50%;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+}
+.top_lis{
+  width: 90%;
+  margin: 0 auto;
+  margin-top:20rpx;
+  font-size: 26rpx;
+  color: #E2492B;
+}

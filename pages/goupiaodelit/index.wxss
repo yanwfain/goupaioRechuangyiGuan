@@ -1,0 +1,170 @@
+/* pages/goupiaodelit/index.wxss */
+
+page {
+  background: #fbfcfd;
+}
+
+.searchBox {
+  width: 100%;
+  height: 440rpx;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.shop_swiper {
+  width: 100%;
+  height: 440rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.imgheight image {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 600;
+  width: 100%;
+  color: white;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+}
+
+.cont_cont {
+  width: 92%;
+  margin: 0 auto;
+  box-shadow: 0.3px 1px 2px 0.2px grey;
+  border-radius: 14rpx;
+  padding: 20rpx 0;
+  position: relative;
+  z-index: 3;
+  margin-top: -100rpx;
+  background: white;
+}
+
+.title_cont {
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 10rpx 20rpx;
+}
+
+.time_cont {
+  font-size: 26rpx;
+  padding: 10rpx 20rpx;
+  color: rgb(180, 180, 180);
+}
+
+.bot_delit {
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-top: 2rpx solid #e5e5e5;
+  display: flex;
+  align-items: center;
+}
+
+.moeny {
+  font-size: 36rpx;
+  /* font-weight: 600; */
+  margin-right: 20rpx;
+}
+
+.yitxt {
+  font-size: 24rpx;
+  color: #6E3978;
+  border: 2rpx solid #6E3978;
+}
+
+.vipBtn {
+  width: 92%;
+  margin: 0 auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #6E3978;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+  color: white;
+}
+
+.jijantou {
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(45deg);
+  margin-right:40rpx;
+
+}
+.left-txt{
+  margin-left:40rpx;
+  font-size: 28rpx;
+
+}
+.cont_delit{
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  border-radius: 14rpx;
+  box-shadow: 0.3px 1px 2px 0.2px grey;
+  padding: 10rpx 0;
+  background: white;
+  padding-bottom: 40rpx;
+  margin-bottom: 40rpx;
+
+}
+.tab{
+  /* width: 100%; */
+  padding:0 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #E5E5E5;
+  background: white;
+
+}
+.tab-view{
+  width: 30%;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  border-bottom: 2rpx solid white;
+}
+.active{
+  border-bottom: 2rpx solid #6E3978;
+
+}
+.tit_delit{
+  padding: 20rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+
+}
+.txt_delit{
+  font-size: 28rpx;
+  color: #333333;
+  padding: 6rpx 20rpx;
+  /* padding-bottom: 300rpx; */
+}
+.btnsubmit{
+    position: fixed;
+  left:0;
+  bottom: 0;
+  width: 100%;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: white;
+  background: #6E3978;
+
+  font-size: 30rpx;
+}

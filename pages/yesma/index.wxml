@@ -1,0 +1,50 @@
+
+<view class="cont_img">
+  <image src="https://ticket.thid.cn/public/index.php/Api/index/getQrcode?order_id={{goshop_index.child[0].id}}"></image>
+</view>
+<view class="top_lis">
+  <text>*核销码使用次数鉴于下单的数量，且与出行人的身份信息绑定。
+  使用方法：</text>
+  
+  <text>
+    1.购买后直接用所绑定刷身份证刷卡入场；
+    2.购买后出示电子门票核销入场(本票为一码多核：如购买多张门票只需截图电子门票，发给其他购票人直接核销入场)。
+</text>
+</view>
+<view class="list" style="border-top:2rpx solid #E5E5E5;margin-top:50rpx;">
+  <view class="left">购票张数:</view>
+  <view class="right" style="color:#00C25F">{{goshop_index.num}}张</view>
+</view>
+<view class="list">
+  <view class="left">已使用张数:</view>
+  <view class="right" style="color:red">{{goshop_index.use_num}}张</view>
+</view>
+<block wx:if="{{goshop_index.is_invoice==2}}">
+  <view class="list">
+    <view class="left">发票抬头:</view>
+    <view class="right">{{goshop_index.invoice_name}}</view>
+  </view>
+  <view class="list">
+    <view class="left">公司税号:</view>
+    <view class="right">{{goshop_index.invoice_num}}</view>
+  </view>
+  <view class="list">
+    <view class="left">邮箱:</view>
+    <view class="right">{{goshop_index.email}}</view>
+  </view>
+</block>
+<block wx:for="{{_list}}">
+<view class="list" >
+  <view class="left">出行人信息:</view>
+  <view class="right">{{item.name}}</view>
+</view>
+<view class="list">
+  <view class="left">出行人身份证号:</view>
+  <view class="right">{{item.id_num}}</view>
+</view>
+<!-- <view class="list">
+  <view class="left">购票人手机号:</view>
+  <view class="right">{{mobile}}</view>
+</view> -->
+</block>
+

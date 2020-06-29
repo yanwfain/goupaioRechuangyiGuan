@@ -1,0 +1,47 @@
+/* pages/userdelit/index.wxss */
+.list{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #ccc;
+    justify-content: space-between;
+}
+.left{
+  width: 20%;
+  font-size: 28rpx;
+  color: #C0C1C3;
+
+}
+.img_top{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+input{
+  width: 80%;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+  text-align: right;
+}
+.main-item-input{
+   width: 100%;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+  text-align: right;
+}
+.picker-area-text{
+  width: 100%;
+}
+.btn{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 60rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  background: #834e8b;
+  color: white;
+  text-align: center;
+}
